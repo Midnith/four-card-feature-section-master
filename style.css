@@ -1,0 +1,133 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* COLORS */
+:root {
+    /* Primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    /* Neutral*/
+    --veryDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+}
+
+/* GENERAL */
+body {
+    background-color: var(--veryLightGray);
+    font-family: 'Poppins', sans-serif;
+    font-size: .9375em; /* 15px */
+    font-weight: 400;
+    color: var(--grayishBlue);
+    height: 100vh;
+}
+h1, h2 {
+    font-weight: 600;
+    color: var(--veryDarkBlue);
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.25em;
+}
+
+/* MAIN */
+.main-content {
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+.content {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
+    row-gap: 2em;
+    width: 75vw;
+}
+
+/* Top content */
+.head-section {
+    grid-column: span 3;
+    text-align: center;
+    width: 45%;
+}
+.head-section em {
+    font-weight: 200;
+    font-style: normal;
+    color: var(--grayishBlue);
+}
+
+/* Cards */
+.card {
+    border-top: 4px solid;
+    width: 70%;
+    background-color: white;
+    box-shadow: 0 .5em 1em rgba(0,0,0,.2);
+    border-radius: .4em;
+    padding: 1em 3em 1.5em;
+}
+.card img {
+    position: relative;
+    left: 80%;
+    top: 20%;
+}
+.card-1 {
+    border-color: var(--cyan);
+    grid-row: span 2;
+    justify-self: end;
+}
+.card-2 {
+    border-color: var(--red);
+}
+.card-3 {
+    border-color: var(--orange);
+}
+.card-4 {
+    border-color: var(--blue);
+    grid-row: span 2;
+    justify-self: start;
+}
+
+/* FOOTER */
+footer {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:850px) {
+    /* Main */
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto repeat(4, 1fr);
+        row-gap: 1em;
+        width: 90vw;
+        margin-bottom: 4em;
+    }
+    /* Head */
+    .head-section {
+        grid-column: auto;
+        text-align: center;
+        width: 95%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .head-section em {
+        font-size: 1em;
+    }
+    /* Cards */
+    .card-1 {
+        grid-row: span 1;
+        justify-self: auto;
+    }
+    .card-4{
+        grid-row: span 1;
+        justify-self: auto;
+    }
+}
